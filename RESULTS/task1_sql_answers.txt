@@ -1,0 +1,121 @@
+Lemme show you how its done:
+
+Task 1 Questions & Answers
+
+q1 - checkout counts per member
+For the purpose of this query I have used a LEFT JOIN between the members and the checkouts so that members with zero borrows are not omitted from the results.
+
+query:
+SELECT 
+    members.member_id, 
+    members.first_name, 
+    members.last_name, 
+    COUNT(checkouts.checkout_id) AS total_checkouts
+FROM members
+LEFT JOIN checkouts ON members.member_id = checkouts.member_id
+The query should group by members.member_id, members.first_name, and members.last_name.
+
+results:
+It gives the total number of checkouts for each person, for example, Salma Ibrahim (1001) has 1, Fares Saleh (1002) has 2, Bassel Hegazy (1003) has 9, and members such as Bassel Adel (1039) have 0.
+
+
+q2 - searching author pattern
+The query used 'Sara%' as a filter to include any author whose first name began with Sara.
+
+query:
+SELECT 
+    books.book_id, 
+    books.title, 
+    books.author
+FROM books
+WHERE books.author LIKE 'Sara%';
+
+results:
+found 2 books by Sara Tantawy:
+- Book 529: Riddles of the Red Sea
+- Book 530: The Sandstone Key
+
+
+q3 - top 5 popular books
+Linked the books with their checkouts, counted the number of checkouts for each book_id, sorted the results in descending order and restricted the output to the top 5.
+
+query:
+SELECT 
+    books.book_id, 
+    books.title, 
+    COUNT(checkouts.checkout_id) AS times_borrowed
+FROM books
+JOIN checkouts ON books.book_id = checkouts.book_id
+GROUP BY books.book_id, books.title
+ORDER BY times_borrowed DESC
+LIMIT 5;
+
+results:
+1. The Silver Kite (501). 57 checkouts
+2. Fossils and Fireflies (507). 55 checkouts
+3. Circuits for Beginners (513). 46 checkouts
+4. Kites Over Cairo (519). 38 checkouts.
+Storms and Sailboats (525) – 25 checkouts
+
+
+q4 - most active readers
+We joined the members and the checkouts, grouped them by member_id, counted the number of checkouts for each person, and then selected the top 10.
+
+query:
+SELECT 
+    members.member_id, 
+    members.first_name, 
+    members.last_name, 
+    COUNT(checkouts.checkout_id) AS total_borrowed
+FROM members
+JOIN checkouts ON members.member_id = checkouts.member_id
+GROUP BY members.member_id, members.first_name, members.last_name
+ORDER BY total_borrowed DESC
+LIMIT 10;
+
+results:
+1. Aya Wahba (1034), 25
+2. Sherif Saleh (1044), 21
+3. Ziad Saleh (1008), 19
+4. Nour Nabil (1010), 18
+5. Mostafa Fouad (1027), 18
+6. Ahmed Shafik (1018), 17
+7. Youssef Hegazy, (1024) – 17
+8. Adam Fahmy (1065), 17
+9. Reem Osman (1030), 16
+10. Sara Rashad (1047), 16
+
+
+q5 - older activity in Maadi
+For the Maadi neighbourhood the checkouts were sorted in descending order by date and OFFSET 10 was used in order to skip the 10 most recent checkouts and see the older ones.
+
+query:
+SELECT 
+    checkouts.checkout_id, 
+    members.first_name, 
+    members.last_name, 
+    members.neighborhood, 
+    checkouts.checkout_date
+FROM checkouts
+JOIN members ON checkouts.member_id = members.member_id
+WHERE members.neighborhood = 'Maadi'
+ORDER BY checkouts.checkout_date DESC
+LIMIT -1 OFFSET 10;
+
+results:
+shows older Maadi checkouts starting right after the top 10 most recent:
+- 9103: Bassel Hegazy (2025-09-04)
+- 9081: Adam Badr (2025-08-25)
+- 9001: Ziad Saleh (2025-08-23)
+and goes on to the 2024 dates.
+
+
+(PARAGRAPH FROM TASK1 DASHBOARD ABOUT WEB PAGES VS DATABASES AS A DATA SOURCE)
+
+Reflection: HTML Web Pages vs database
+
+There is a fundamental difference between working with a database and scraping an HTML table. A database is designed specifically to be queried and accessed by programs, it enables table schemas, primary keys, relationships, which enables you to filter or join data easily using SQL.
+
+An HTML web page is merely intended for display in a browser so that people can read it visually, it includes standard table tags, but has no built-in database rules or query facilities. If you want to use the data from a web page in Python, you have to parse the raw HTML (for example, by using pandas read_html function that was required in task1), clean the column headers and rename them so that they correspond to your database fields, and then join all the data manually.
+
+This was important in this case since the checkout records from the Reading Kickoff event had been posted as an HTML table rather than being entered into SQLite3. In order to combine everything into a single CSV, I used pandas to parse the table, changed the names of 'Member ID', 'Book ID' and 'Checkout Date' to align with the naming convention of the database, and then incorporated the member and book details into those rows before joining them with the main database checkouts to produce task1_combined_data.csv.
