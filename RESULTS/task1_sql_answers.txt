@@ -1,9 +1,7 @@
-Lemme show you how its done:
-
 Task 1 Questions & Answers
 
 q1 - checkout counts per member
-For the purpose of this query I have used a LEFT JOIN between the members and the checkouts so that members with zero borrows are not omitted from the results.
+I used a LEFT JOIN so that members with no checkouts would still appear.
 
 query:
 SELECT 
@@ -114,7 +112,7 @@ and goes on to the 2024 dates.
 
 Reflection: HTML Web Pages vs database
 
-There is a fundamental difference between working with a database and scraping an HTML table. A database is designed specifically to be queried and accessed by programs, it enables table schemas, primary keys, relationships, which enables you to filter or join data easily using SQL.
+There is a HUGE difference between working with a database and scraping an HTML table. A database is designed specifically to be queried and accessed by programs, it enables table schemas, primary keys, relationships, which enables you to filter or join data easily using SQL.
 
 An HTML web page is merely intended for display in a browser so that people can read it visually, it includes standard table tags, but has no built-in database rules or query facilities. If you want to use the data from a web page in Python, you have to parse the raw HTML (for example, by using pandas read_html function that was required in task1), clean the column headers and rename them so that they correspond to your database fields, and then join all the data manually.
 
