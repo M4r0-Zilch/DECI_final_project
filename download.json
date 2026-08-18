@@ -1,0 +1,226 @@
+[
+  {
+    "book_id": 501,
+    "genre": "Adventure",
+    "pages": 128,
+    "publication_year": 2017,
+    "publisher": "Nile Press"
+  },
+  {
+    "book_id": 502,
+    "genre": "Adventure",
+    "pages": 109,
+    "publication_year": 2018,
+    "publisher": "Delta House"
+  },
+  {
+    "book_id": 503,
+    "genre": "Historical",
+    "pages": 259,
+    "publication_year": null,
+    "publisher": "Nile Press"
+  },
+  {
+    "book_id": 504,
+    "genre": "Science",
+    "pages": 319,
+    "publication_year": 2009,
+    "publisher": "Cairo Young Readers"
+  },
+  {
+    "book_id": 505,
+    "genre": "Historical",
+    "pages": 216,
+    "publication_year": 2024,
+    "publisher": "Oasis Books"
+  },
+  {
+    "book_id": 506,
+    "genre": "Friendship",
+    "pages": 183,
+    "publication_year": null,
+    "publisher": "Nile Press"
+  },
+  {
+    "book_id": 507,
+    "genre": "Science",
+    "pages": 160,
+    "publication_year": 2024,
+    "publisher": "Nile Press"
+  },
+  {
+    "book_id": 508,
+    "genre": "Science",
+    "pages": 306,
+    "publication_year": 2011,
+    "publisher": "Oasis Books"
+  },
+  {
+    "book_id": 509,
+    "genre": "Mystery",
+    "pages": 221,
+    "publication_year": 2011,
+    "publisher": "Nile Press"
+  },
+  {
+    "book_id": 510,
+    "genre": "Mystery",
+    "pages": 134,
+    "publication_year": 2013,
+    "publisher": "Cairo Young Readers"
+  },
+  {
+    "book_id": 511,
+    "genre": "Historical",
+    "pages": 117,
+    "publication_year": 2016,
+    "publisher": "Nile Press"
+  },
+  {
+    "book_id": 512,
+    "genre": "Adventure",
+    "pages": 238,
+    "publication_year": 2022,
+    "publisher": "Delta House"
+  },
+  {
+    "book_id": 513,
+    "genre": "Science",
+    "pages": 294,
+    "publication_year": 2021,
+    "publisher": "Oasis Books"
+  },
+  {
+    "book_id": 514,
+    "genre": "Science Fiction",
+    "pages": 328,
+    "publication_year": 2023,
+    "publisher": "Cairo Young Readers"
+  },
+  {
+    "book_id": 515,
+    "genre": "Poetry",
+    "pages": 316,
+    "publication_year": 2022,
+    "publisher": "Cairo Young Readers"
+  },
+  {
+    "book_id": 516,
+    "genre": "Nature",
+    "pages": 241,
+    "publication_year": 2010,
+    "publisher": "Nile Press"
+  },
+  {
+    "book_id": 517,
+    "genre": "Mystery",
+    "pages": 338,
+    "publication_year": 2015,
+    "publisher": "Delta House"
+  },
+  {
+    "book_id": 518,
+    "genre": "Adventure",
+    "pages": 163,
+    "publication_year": 2011,
+    "publisher": "Delta House"
+  },
+  {
+    "book_id": 519,
+    "genre": "Friendship",
+    "pages": 157,
+    "publication_year": 2014,
+    "publisher": "Nile Press"
+  },
+  {
+    "book_id": 520,
+    "genre": "Science Fiction",
+    "pages": 136,
+    "publication_year": 2009,
+    "publisher": "Oasis Books"
+  },
+  {
+    "book_id": 521,
+    "genre": "Science",
+    "pages": 211,
+    "publication_year": 2024,
+    "publisher": "Cairo Young Readers"
+  },
+  {
+    "book_id": 522,
+    "genre": "Mystery",
+    "pages": 104,
+    "publication_year": 2016,
+    "publisher": "Cairo Young Readers"
+  },
+  {
+    "book_id": 523,
+    "genre": "Historical",
+    "pages": 276,
+    "publication_year": 2018,
+    "publisher": "Oasis Books"
+  },
+  {
+    "book_id": 524,
+    "genre": "Historical",
+    "pages": 114,
+    "publication_year": 2016,
+    "publisher": "Cairo Young Readers"
+  },
+  {
+    "book_id": 525,
+    "genre": "Adventure",
+    "pages": 297,
+    "publication_year": 2015,
+    "publisher": "Oasis Books"
+  },
+  {
+    "book_id": 526,
+    "genre": "Science Fiction",
+    "pages": 125,
+    "publication_year": 2016,
+    "publisher": "Delta House"
+  },
+  {
+    "book_id": 527,
+    "genre": "Nature",
+    "pages": 328,
+    "publication_year": 2017,
+    "publisher": "Delta House"
+  },
+  {
+    "book_id": 528,
+    "genre": "Nature",
+    "pages": 114,
+    "publication_year": 2010,
+    "publisher": "Delta House"
+  },
+  {
+    "book_id": 529,
+    "genre": "Mystery",
+    "pages": 298,
+    "publication_year": null,
+    "publisher": "Cairo Young Readers"
+  },
+  {
+    "book_id": 530,
+    "genre": "Adventure",
+    "pages": 208,
+    "publication_year": 2012,
+    "publisher": "Oasis Books"
+  },
+  {
+    "book_id": 531,
+    "genre": "Friendship",
+    "pages": 272,
+    "publication_year": 2018,
+    "publisher": "Oasis Books"
+  },
+  {
+    "book_id": 532,
+    "genre": "Friendship",
+    "pages": 337,
+    "publication_year": 2017,
+    "publisher": "Oasis Books"
+  }
+]
