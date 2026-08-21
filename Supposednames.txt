@@ -1,3 +1,0 @@
-level3_final_project_library.db
-level3_final_project_book_catalog.json
-level3_final_project_event_signup.html

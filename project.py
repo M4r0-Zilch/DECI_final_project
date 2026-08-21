@@ -1,6 +1,6 @@
 import sqlite3 as s3
 import pandas as pd
-conn = s3.connect('download.db')
+conn = s3.connect('level3_final_project_library.db')
 db_checkouts = pd.read_sql_query('''
     SELECT 
         checkouts.checkout_id,
@@ -17,9 +17,9 @@ db_checkouts = pd.read_sql_query('''
     FROM checkouts
     LEFT JOIN members ON checkouts.member_id = members.member_id
 ''', conn)
-books_info = pd.read_json('download.json')
+books_info = pd.read_json('level3_final_project_book_catalog.json')
 main_db_df = pd.merge(db_checkouts, books_info, on = 'book_id', how = 'left')
-web_table = pd.read_html('download.html')[0]
+web_table = pd.read_html('level3_final_project_event_signup.html')[0]
 web_table = web_table.rename(columns = {
     'Member ID': 'member_id',
     'Book ID': 'book_id',
